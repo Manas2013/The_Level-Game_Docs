@@ -1,0 +1,144 @@
+* {
+    font-family: "Roboto";
+    color: white;
+}
+
+.header *{
+    display: inline;
+}
+
+#sidebar {
+    display: none;
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+}
+
+#sidebar svg {
+    fill: black;
+}
+
+.gridcontainor {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 50px 100% 24px;
+    grid-template-areas:
+    "Header Header"
+    "Actions Main"
+    "Footer Footer";
+}
+
+.gridcontainor * {
+    margin: 2px;
+}
+
+.Main {
+    grid-area: Main;
+    background-color: #215af5;
+    padding: 10px;
+}
+
+.actions {
+    grid-area: Actions;
+    background-color: #5a21f5;
+    position: sticky;
+    height: calc(100% - 5px);
+    /* top: 0; */
+}
+
+.header {
+    background-color: #5e12f2;
+    grid-area: Header;
+    & * {
+        margin-left: 10px;
+    }
+}
+
+.footer {
+    background-color: #5fa512;
+    grid-area: Footer;
+    & * {
+        margin-right: 10px;
+    }
+}
+
+.footer svg {
+    transition: all 1s ease;
+}
+.footer svg:hover {
+    fill: blue;
+}
+
+kbd {
+    display: inline-block;
+    background-color: lightgray;
+    border: 2px solid #c0c0c0;
+    color: black;
+    border-radius: 2px;
+    transition: all 1s ease;
+    font-family: Consolas, 'Courier New', monospace;
+    font-weight: bold;
+}
+
+kbd:hover {
+    transform: scale(1.5);
+}
+
+fieldset {
+    border-radius: 2px;
+    border: 5px solid white;
+}
+
+details {
+    width: 90%;
+    box-shadow: 2px 2px 1px 1px black;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 10px;
+    transition: all 1s ease;
+    & summary, & * {
+        color: black;
+    }
+}
+
+#RecOSdetail:hover {
+    background-color: green;
+}
+
+#NonRecOSdetail:hover {
+    background-color: red;
+}
+
+body {
+    background-color: #1d0e5e;
+}
+
+@media(max-width: 800px) {
+    .actions {
+        transition: all 1s ease;
+        position: absolute;
+        left: -32vw;
+        display: none;
+        position: absolute;
+        background-color: #000000a0;
+        width: 30vw;
+    }
+
+    .gridcontainor {
+        grid-template-columns: 1fr;
+    }
+
+    #sidebar {
+        display: inline;
+    }
+
+    #exit {
+        position: absolute;
+        left: calc(30vw);
+        width: 70vw;
+        height: 100%;
+        display: block;
+        z-index: 1000;
+    }
+}
